@@ -1,0 +1,184 @@
+@use 'variables';
+@use 'hero';
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'TabacGlan', sans-serif;
+    background-color: variables.$backgroudColor;
+    color: variables.$primaryTextColor;
+}
+
+@font-face {
+    font-family: 'arcane-nine';
+    src: url(../fonts/Arcane-Nine.woff);
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'TabacGlan';
+    src: url(../fonts/TabacGlan/TabacGlamG1-Regular.otf);
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'TabacGlan';
+    src: url(../fonts/TabacGlan/TabacGlamG1-Bold.otf);
+    font-weight: bold;
+    font-style: normal;
+}
+
+.content {
+    position: relative;
+    margin-bottom: 50px;
+
+    &__image {
+        position: relative;
+
+        img {
+            width: 100%;
+            max-height: 900px;
+            object-fit: cover;
+        }
+
+        &::before {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to bottom, rgba(18, 13, 19, 1) 6%, rgba(18, 13, 19, 0.2) 40%, rgba(18, 13, 19, 1) 94%);
+            content: '';
+        }
+
+        &__title {
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            top: 0;
+            position: absolute;
+            color: variables.$secundaryTextColor;
+            width: 100%;
+            font-weight: normal;
+            text-align: center;
+            background: none;
+
+            h4,
+            h1,
+            h2 {
+                color: variables.$secundaryTextColor;
+                background: none;
+                font-weight: normal;
+            }
+
+            h1 {
+                font-size: 110px;
+                color: variables.$primaryTextColor;
+            }
+
+            h2 {
+                font-size: 180px;
+            }
+
+            h4 {
+                font-size: 64px;
+            }
+        }
+    }
+
+    &__text {
+
+        max-width: 66%;
+        background: none;
+        padding: 70px 5.6vw;
+        font-size: 24px;
+
+        p {
+            color: variables.$secundaryTextColor;
+            background: none;
+            margin-bottom: 24px;
+        }
+    }
+
+    @media (max-width: 1024px) {
+        &__image {
+            &__title {
+                padding: 4vw 4vw 0 4vw;
+
+                h1 {
+                    font-size: 80px;
+                }
+
+                h4 {
+                    font-size: 60px;
+                }
+
+                h2 {
+                    font-size: 120px;
+                }
+            }
+        }
+
+        &__text {
+            padding: 50px 4vw;
+            font-size: 20px;
+        }
+    }
+
+    @media (max-width: 767px) {
+        &__image {
+            &__title {
+
+                padding: 3vw 3vw 0 3vw;
+
+                h4 {
+                    font-size: 50px;
+                }
+
+                h2 {
+                    font-size: 100px;
+                }
+
+                h1 {
+                    font-size: 60px;
+                }
+            }
+        }
+
+        &__text {
+            max-width: 100%;
+            padding: 40px 3vw;
+            font-size: 18px;
+        }
+    }
+
+    @media (max-width: 600px) {
+        &__image {
+            &__title {
+
+                padding: 2vw 2vw 0 2vw;
+
+                h4 {
+                    font-size: 40px;
+                }
+
+                h2 {
+                    font-size: 50px;
+                }
+
+                h1 {
+                    font-size: 42px;
+                }
+            }
+        }
+
+        &__text {
+            padding: 30px 2vw;
+            font-size: 16px;
+        }
+    }
+}
